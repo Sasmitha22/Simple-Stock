@@ -1,0 +1,114 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Stocky</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="main">
+            <div class="navbar">
+                <div class="icon">
+                    <h1>Stocky</h1>
+                </div>
+                <div class="menu">
+                    <ul>
+                        <li><a href="#">Product</a></li>
+                        <li><a href="#">Purchase</a></li>
+                        <li><a href="#">Sales</a></li>
+                        <li><a href="#">Stock</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="marketplace">
+                <div class="item-container">
+                    <img src="img/1.jpg" alt="Item 1">
+                    <h2>Apple</h2>
+                    <p>Buy 1kg at just Rs.50</p>
+                    <p id="quantity1">Available Quantity: 10</p>
+                    <button onclick="Additem(1)">ADD ITEM</button>
+                    <button onclick="Details(1)">DETAILS</button>
+                </div>
+            
+                <div class="item-container">
+                    <img src="img/2.jpg" alt="Item 2">
+                    <h2>Orange</h2>
+                    <p>Buy 1kg at just Rs.50</p>
+                    <p id="quantity2">Available Quantity: 10</p>
+                    <button onclick="Additem(2)">ADD ITEM</button>
+                    <button onclick="Details(2)">DETAILS</button>
+                </div>
+                <div class="item-container">
+                    <img src="img/3.jpg" alt="Item 2">
+                    <h2>Papaya</h2>
+                    <p>Buy 1kg at just Rs.50</p>
+                    <p id="quantity3">Available Quantity: 10</p>
+                    <button onclick="Additem(3)">ADD ITEM</button>
+                    <button onclick="Details(3)">DETAILS</button>
+                </div>
+                <div class="item-container">
+                    <img src="img/4.jpg" alt="Item 2">
+                    <h2>Pomegranate</h2>
+                    <p>Buy 1kg at just Rs.50</p>
+                    <p id="quantity4">Available Quantity: 10</p>
+                    <button onclick="Additem(4)">ADD ITEM</button>
+                    <button onclick="Details(4)">DETAILS</button>
+                </div>
+                <div class="item-container">
+                    <img src="img/5.jpg" alt="Item 2">
+                    <h2>Watermelon</h2>
+                    <p>Buy 1kg at just Rs.50</p>
+                    <p id="quantity5">Available Quantity: 10</p>
+                    <button onclick="Additem(5)">ADD ITEM</button>
+                    <button onclick="Details(5)">DETAILS</button>
+                </div>
+                <div class="item-container">
+                    <img src="img/1.jpg" alt="Item 1">
+                    <h2>Apple</h2>
+                    <p>Buy 1kg at just Rs.50</p>
+                    <p id="quantity6">Available Quantity: 10</p>
+                    <button onclick="Additem(6)">ADD ITEM</button>
+                    <button onclick="Details(6)">DETAILS</button>
+                </div>
+            
+                <div class="item-container">
+                    <img src="img/2.jpg" alt="Item 2">
+                    <h2>Orange</h2>
+                    <p>Buy 1kg at just Rs.50</p>
+                    <p id="quantity7">Available Quantity: 10</p>
+                    <button onclick="Additem(7)">ADD ITEM</button>
+                    <button onclick="Details(7)">DETAILS</button>
+                </div>
+                <div class="item-container">
+                    <img src="img/3.jpg" alt="Item 2">
+                    <h2>Papaya</h2>
+                    <p>Buy 1kg at just Rs.50</p>
+                    <p id="quantity8">Available Quantity: 10</p>
+                    <button onclick="Additem(8)">ADD ITEM</button>
+                    <button onclick="Details(8)">DETAILS</button>
+                </div>
+            </div>
+        </div>
+        <script>
+            function Additem(itemId){
+                var ele = document.getElementById("quantity"+itemId);
+                var current = parseInt(ele.innerText.split(':')[1]);
+                if (current >0){
+                    current--;
+                    ele.innerText = "Avaliable Quantity: "+ current;
+                    alert('Added Item. Updated Quantity: ' + current);
+                } 
+                else {
+                    alert('Out of stock!');
+                }
+            }
+        </script>
+        <script>
+            function Details(itemId){
+                var ele = document.getElementById("quantity"+itemId);
+                var current = parseInt(ele.innerText.split(':')[1]);
+                alert('Stocks available:'+current+'\n'+'Price: Rs.50/- per Kg');
+            }
+        </script>
+    </body>
+</html>
